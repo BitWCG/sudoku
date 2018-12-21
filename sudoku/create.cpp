@@ -1,8 +1,8 @@
 /// <summary> 
-///	±¾ÎÄ¼ş¶ÔÍâÌá¹© create_sudoku(int n)º¯Êı£¬ÊµÏÖ¹¹Ôì n ¸ö²»ÖØ¸´Êı¶ÀÖÕ¾Ö,²¢Êä³ö¡£
+///	æœ¬æ–‡ä»¶å¯¹å¤–æä¾› create_sudoku(int n)å‡½æ•°ï¼Œå®ç°æ„é€  n ä¸ªä¸é‡å¤æ•°ç‹¬ç»ˆå±€,å¹¶è¾“å‡ºã€‚
 /// </summary> 
 ///	<comment> 
-///	Ñ§ºÅ£º1120161918 
+///	å­¦å·ï¼š1120161757
 ///	(1+8)%9+1 = 1 
 ///	</comment> 
 
@@ -34,14 +34,14 @@ inline void fill(int m, int n, int l, BOARD &backup, BOARD &board)
 	}
 }
 
-///	<summary> Éú³Én¸öÊı¶ÀÖÕ¾Ö </summary>
-/// <param name="n"> ĞèÇóÉú³ÉÊı¶ÀÖÕ¾ÖµÄÊıÁ¿ </param> 
-///	<return> 1:Õı³£Éú³ÉÊı¶ÀÖÕ¾Ö; -1:³ÌĞòÖ´ĞĞ³ö´í </return>
+///	<summary> ç”Ÿæˆnä¸ªæ•°ç‹¬ç»ˆå±€ </summary>
+/// <param name="n"> éœ€æ±‚ç”Ÿæˆæ•°ç‹¬ç»ˆå±€çš„æ•°é‡ </param> 
+///	<return> 1:æ­£å¸¸ç”Ÿæˆæ•°ç‹¬ç»ˆå±€; -1:ç¨‹åºæ‰§è¡Œå‡ºé”™ </return>
 int create_sudoku(int n)
 {
 	FILE *fp;
 	fp = fopen("sudoku.txt", "w");
-	int count = 0;	// ¼ÆÊı£¬µÚÒ»´ÎÊä³ö²»Êä³ö¿ÕĞĞ 
+	int count = 0;	// è®¡æ•°ï¼Œç¬¬ä¸€æ¬¡è¾“å‡ºä¸è¾“å‡ºç©ºè¡Œ 
 	BOARD board;
 
 	for (int i = 0; i<40320; i++) {
@@ -59,10 +59,10 @@ int create_sudoku(int n)
 			}
 		}
 
-		board = backup;	// Êä³ö³õÊ¼¹¹Ôì 
+		board = backup;	// è¾“å‡ºåˆå§‹æ„é€  
 		for (int j = 0; j<6; j++) {
 			for (int k = 0; k<6; k++) {
-				// 1~3ĞĞÌî³ä·½°¸1 
+				// 1~3è¡Œå¡«å……æ–¹æ¡ˆ1 
 				if (count<n) {
 					fill(0, j, k, backup, board);
 					print(fp, board, count);
@@ -70,13 +70,13 @@ int create_sudoku(int n)
 				}
 				else if (count == n) {
 					fclose(fp);
-					return 1;		// Õı³£Íê³ÉÃüÁî 
+					return 1;		// æ­£å¸¸å®Œæˆå‘½ä»¤ 
 				}
 				else if (count >= n) {
 					fclose(fp);
-					return -1;	// ±¨´í:³ÌĞòÖ´ĞĞ´íÎó 
+					return -1;	// æŠ¥é”™:ç¨‹åºæ‰§è¡Œé”™è¯¯ 
 				}
-				// 1~3ĞĞÌî³ä·½°¸2 
+				// 1~3è¡Œå¡«å……æ–¹æ¡ˆ2 
 				if (count<n) {
 					fill(1, j, k, backup, board);
 					print(fp, board, count);
@@ -84,15 +84,15 @@ int create_sudoku(int n)
 				}
 				else if (count == n) {
 					fclose(fp);
-					return 1;		// Õı³£Íê³ÉÃüÁî 
+					return 1;		// æ­£å¸¸å®Œæˆå‘½ä»¤ 
 				}
 				else if (count >= n) {
 					fclose(fp);
-					return -1;	// ±¨´í:³ÌĞòÖ´ĞĞ´íÎó 
+					return -1;	// æŠ¥é”™:ç¨‹åºæ‰§è¡Œé”™è¯¯ 
 				}
 			}
 		}
 	}
 	fclose(fp);
-	return -1;	// ±¨´í:ÊäÈënÒÑ¾­³¬¹ıÄÜÉú³ÉµÄ×î´ó¸öÊı,²¢ÇÒÒÑ¾­Éú³É 290 3040×é 
+	return -1;	// æŠ¥é”™:è¾“å…¥nå·²ç»è¶…è¿‡èƒ½ç”Ÿæˆçš„æœ€å¤§ä¸ªæ•°,å¹¶ä¸”å·²ç»ç”Ÿæˆ 290 3040ç»„ 
 }
