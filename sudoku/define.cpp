@@ -5,9 +5,7 @@
 #include "stdafx.h"
 
 ///	<summary> 输入的字符变为数字  </summary>
-/// <return> 
-///	-1:不是数字 ; -2: 数字太大 ; -3:输入数字超过题目要求但可以执行 ; else 返回字符串代表的数字 
-///	</return> 
+
 
 #pragma warning(disable:4996)
 

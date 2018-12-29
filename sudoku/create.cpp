@@ -2,8 +2,8 @@
 ///	本文件对外提供 create_sudoku(int n)函数，实现构造 n 个不重复数独终局,并输出。
 /// </summary> 
 ///	<comment> 
-///	学号：1120161918 
-///	(1+8)%9+1 = 1 
+///	<学号> 1120161757 </学号>
+///	<左上角> (5+7)%9+1 = 4 </左上角> 
 ///	</comment> 
 
 #include "stdafx.h"
@@ -44,26 +44,26 @@ int create_sudoku(int n)
 	int count = 0;	// 计数，第一次输出不输出空行 
 	BOARD board;
 
-	for (int i = 0; i<40320; i++) {
+	for (int i = 0; i < 40320; i++) {
 		BOARD backup;
-		for (int k = 0; k<9; k++) {
+		for (int k = 0; k < 9; k++) {
 			backup.map[0][k] = origin[i][k];
 			backup.row[k] = 1022;
 			backup.col[k] = 1022;
 			backup.grid[k] = 1022;
 		}
 
-		for (int j = 1; j<9; j++) {
-			for (int k = 0; k<9; k++) {
+		for (int j = 1; j < 9; j++) {
+			for (int k = 0; k < 9; k++) {
 				backup.map[j][k] = backup.map[0][(k + shift[j]) % 9];
 			}
 		}
 
 		board = backup;	// 输出初始构造 
-		for (int j = 0; j<6; j++) {
-			for (int k = 0; k<6; k++) {
-				// 1~3行填充方案1 
-				if (count<n) {
+		for (int j = 0; j < 6; j++) {
+			for (int k = 0; k < 6; k++) {
+
+				if (count < n) {
 					fill(0, j, k, backup, board);
 					print(fp, board, count);
 					count++;
@@ -76,8 +76,8 @@ int create_sudoku(int n)
 					fclose(fp);
 					return -1;	// 报错:程序执行错误 
 				}
-				// 1~3行填充方案2 
-				if (count<n) {
+
+				if (count < n) {
 					fill(1, j, k, backup, board);
 					print(fp, board, count);
 					count++;
@@ -94,5 +94,5 @@ int create_sudoku(int n)
 		}
 	}
 	fclose(fp);
-	return -1;	// 报错:输入n已经超过能生成的最大个数,并且已经生成 290 3040组 
+	return -1;
 }
