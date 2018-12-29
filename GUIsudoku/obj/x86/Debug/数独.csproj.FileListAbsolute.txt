@@ -1,0 +1,15 @@
+D:\project\C#\数独\数独\bin\Debug\数独.exe
+D:\project\C#\数独\数独\bin\Debug\数独.pdb
+D:\project\C#\数独\数独\obj\x86\Debug\数独.Form1.resources
+D:\project\C#\数独\数独\obj\x86\Debug\数独.Properties.Resources.resources
+D:\project\C#\数独\数独\obj\x86\Debug\数独.csproj.GenerateResource.Cache
+D:\project\C#\数独\数独\obj\x86\Debug\数独.exe
+D:\project\C#\数独\数独\obj\x86\Debug\数独.pdb
+C:\Users\WCG\Desktop\45666023Sudoku\数独\数独\bin\Debug\数独.exe
+C:\Users\WCG\Desktop\45666023Sudoku\数独\数独\bin\Debug\数独.pdb
+C:\Users\WCG\Desktop\45666023Sudoku\数独\数独\obj\x86\Debug\数独.Form1.resources
+C:\Users\WCG\Desktop\45666023Sudoku\数独\数独\obj\x86\Debug\数独.Properties.Resources.resources
+C:\Users\WCG\Desktop\45666023Sudoku\数独\数独\obj\x86\Debug\数独.csproj.GenerateResource.cache
+C:\Users\WCG\Desktop\45666023Sudoku\数独\数独\obj\x86\Debug\数独.csproj.CoreCompileInputs.cache
+C:\Users\WCG\Desktop\45666023Sudoku\数独\数独\obj\x86\Debug\数独.exe
+C:\Users\WCG\Desktop\45666023Sudoku\数独\数独\obj\x86\Debug\数独.pdb
